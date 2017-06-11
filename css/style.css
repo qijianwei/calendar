@@ -1,0 +1,398 @@
+/* 
+* @Author: Qi JianWei
+* @Date:   2016-03-12 11:41:38
+* @Last Modified by:   Qi JianWei
+* @Last Modified time: 2017-06-11 11:43:22
+*/
+
+        /*公共样式*/
+          body,h2,ul,p,button,label,input{
+              margin:0;
+              padding:0;  
+          }
+         body{  
+            font-size:100%;  
+            //margin:3em;  
+            background:#666;   
+          }  
+          ul{
+             list-style: none;
+           }
+         .clear:after{
+              content:"";
+              display:block;
+              clear:both;
+           }
+          @font-face{
+             font-family: "mylove";
+                     src:url("fonts/moon.ttf") format("truetype");              
+                     font-weight: normal;
+                     font-style: normal;
+               } 
+         /*公共样式结束*/
+
+          .wrap{
+             margin-top:5px;
+             margin-left:150px;
+             margin-bottom: 100px;
+             width:364px;
+             position:relative;
+          }
+          .time{
+             width:364px;
+             height:40px;
+             /* text-align: center; */
+             line-height: 40px;
+             font-size: 40px;
+             color:white;
+          }
+          .tab{
+             height:40px;
+             width:364px;
+             position:relative;
+             color:white;
+          }
+          .tab span{
+              display:inline-block;
+              height:40px;
+              line-height: 40px;
+              vertical-align: middle;
+              position:absolute;
+              left:6px;
+              top:10px;
+              /* color:#d2d2d2; */
+          }
+
+           .tab a{
+              text-decoration: none;
+              font-weight: bold;
+              display:inline-block;
+              width:30px;
+              height:30px;
+              opacity:1;
+              font-size: 30px;
+              vertical-align: middle;
+              transform:rotate(90deg);
+              color:white;      
+           }
+           .tab a:nth-of-type(1){
+              position:absolute;
+              right:56px;
+              top:16px;
+           }
+           .tab a:nth-of-type(2){
+              position:absolute;
+              right:5px;
+              top:16px;
+           }
+        
+          /* 日历主体部分开始 */
+           #calendar{
+             width:364px;
+             background-color: white;
+           }
+ 
+           .colorRed{
+              color:red;
+              font-weight: bold;
+           }
+           #head li{
+              height:50px;
+              width:50px;
+              line-height:50px;
+              float:left;
+              text-align: center;
+              margin:0 2px 2px 0;
+
+           }
+           /* 给伪元素命名，日历红点效果*/
+            .test::after{
+             content:'';
+             display:block;
+             border-radius: 50%;
+             width:5px;
+             height:5px;
+             background-color: red;
+             color:red;
+             margin:0 auto;
+           }
+             /* 给伪元素命名*/
+           #list li:hover{
+               height:16px;
+               width:16px;
+              border:2px solid green;
+           }
+ 
+           #list li{
+              width:20px;
+              height:20px;
+              padding:15px;
+              float:left;
+              text-align: center;
+              background: #ededed;
+              margin:0 2px 2px 0;
+           }
+           .otherMonth{
+             color:#cccccc;
+
+           }
+           #list li.today{
+              background:#5d84e1;
+              font-weight:bold;
+           }
+         /* 日历主体部分结束 */
+
+         /****** 添加备忘开始******/
+             .show-list{
+                 background-color: #2a2a29;
+             }
+             .show-list .plus,.list .notes-list{
+                 width:362px;
+             }
+             .show-list .plus a{
+                  display:inline-block;
+                  width:20px;
+                  height:20px;
+                  font-size: 20px;
+                  text-decoration: none;
+                  margin-left:340px; 
+                  color:red;
+                  border:2px solid red;
+                  border-radius: 50%;  
+                  line-height: 20px; 
+                  text-align: center;          
+             }
+              .notes-list li{
+                  height:60px;       
+                  background-color: #2a2a29;
+                  margin-bottom:2px;
+                  color:white;
+                  opacity:0.6;
+              }
+               .notes-list li::before{
+                  content:"";
+                  display:block;
+                  width:8px;
+                  height:60px;
+                  background:#0078d7;
+                  vertical-align: middle;
+                  float:left;
+            }
+           
+             .notes-list li:hover{
+                 background-color:#3f3f3e; 
+              }
+             .notes-list li .times{
+                 float:left;
+                 margin-left: 12px;
+                 padding-top:10px;
+              }
+              .notes-list li .times span{
+                  display:block;
+                  width:80px;
+              }
+               .notes-list li .times span:nth-of-type(2){
+                  display:block;
+                  width:80px;
+                  font-size:12px;
+              }
+               .notes-list li .doIt p:nth-of-type(1){
+                 height:20px;
+                 font-size:14px;
+                 padding-top: 10px;
+                 color:white;
+              }
+              .notes-list li .doIt p:nth-of-type(2){
+                 height:20px;
+                 font-size: 12px;
+                 color:#c2c2c2;
+                 overflow:hidden;
+                 text-overflow: ellipsis;/*显示省略符号来代表被修剪的文本*/
+                 white-space: nowrap; /*p标签中文本不换行*/
+              }
+              .notes-list li .doIt{
+                 height:60px;          
+              }
+          /****** 添加备忘结束******/
+         /**********便签开始***********/
+         
+          .sticky-notes{
+              width:800px;
+              position:absolute;
+              left:580px;
+              top:10px;
+              background:#666; 
+          }
+         .sticky-notes h2,.sticky-notes p{  
+                  font-size:100%;  
+                  font-weight:normal; 
+                  font-family:mylove ;
+                  font-size: 20px;
+                  margin-top:10px;
+          }  
+         .sticky-notes li h2{
+            font-size: 140%;
+            font-weight: bold;
+            padding-bottom: 10px;
+         }
+        .sticky-notes li p{
+            font-size: 105%;
+         } 
+        .sticky-notes{  
+            overflow:hidden;  
+            padding:3em;  
+          }  
+        .sticky-notes li{  
+              margin:1em;  
+              float:left;  
+            }
+
+        .sticky-notes li a{
+                text-decoration: none;
+                color: #000;
+                background: #ffc;
+                display: block;
+                height: 10em;
+                width: 10em;
+                padding: 1em; /* Firefox */
+                -moz-box-shadow: 5px 5px 7px rgba(33,33,33,1); /* Safari+Chrome */
+                -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); /* Opera */
+                box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+                /*旋转-6度*/
+                -webkit-transform:rotate(-6deg);  
+                -o-transform:rotate(-6deg);  
+                -moz-transform:rotate(-6deg); 
+                /*给transform属性加上过渡属性*/ 
+                -moz-transition:-moz-transform .15s linear;  
+                -o-transition:-o-transform .15s linear;  
+                -webkit-transition:-webkit-transform .15s linear;    
+            }
+            /*让正方形随机倾斜*/
+           .sticky-notes li:nth-child(even) a{ 
+              -o-transform:rotate(4deg);  
+              -webkit-transform:rotate(4deg);  
+              -moz-transform:rotate(4deg);
+               position:relative;  
+               top:-5px;
+               background:#cfc;   
+            }  
+           .sticky-notes li:nth-child(3n) a{  
+             -o-transform:rotate(-4deg);  
+             -webkit-transform:rotate(-4deg);  
+             -moz-transform:rotate(-4deg);
+              position:relative;  
+              top:-5px;          
+              background:#ccf;   
+            }  
+            .sticky-notes li:nth-child(5n) a{  
+              -o-transform:rotate(6deg);  
+              -webkit-transform:rotate(6deg);  
+              -moz-transform:rotate(6deg);
+              position:relative;  
+              top:-10px; 
+                
+            }
+            /*让正方形随机倾斜结束*/
+            .sticky-notes li a:hover{  
+              -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);  
+              -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);  
+              box-shadow:10px 10px 7px rgba(0,0,0,.7);  
+              -webkit-transform: scale(1.20);  
+              -moz-transform: scale(1.20);  
+              -o-transform: scale(1.20);  
+              position:relative;  
+              z-index:5;
+            } 
+
+          /**********便签结束***********/
+
+          /*   备忘录输入   */
+              .notes{
+                width:280px;
+                text-align: center;
+                background-color:#e2dfdf;
+                margin-left:40px;
+                padding:0 20px;
+                border-radius: 10px;
+                z-index:101;
+                position:absolute; 
+                left:40%;
+                top:40%;           
+                display:none;
+              }
+              .notes h2{
+                 width:300px;
+                 line-height: 60px;
+                 height:60px;
+                 text-align: center;
+                 margin:0;
+                 padding: 0;
+
+              }
+              .notes .notes-title input{
+                 border:none;
+                 width:180px;
+                 height:30px;
+                 border-radius:4px;
+                 text-align: center;
+
+              }
+              .notes .detail{
+                 margin-top:10px;
+              }
+              .notes textarea{
+                 resize:none;
+                 height:120px;
+                 width:280px;
+                 border-radius:6px;
+                 padding:0;
+                 font-size: 16px;
+              }
+               .notes .notes-time{
+                  margin-left:8px;
+               
+               }
+              .notes .notes-time input{
+                 border:none;
+                 height:30px;
+                 width:164px;
+                 border-radius:4px;
+                 float:left;
+              }
+               .notes .notes-time label{
+                  display:inline-block;
+                  height:30px;
+                  width:80px;
+                  float:left;
+               }
+              .notes .sure{
+                 padding:15px 0;
+              }
+              .notes .sure button{
+                 background-color: #6d9fd4;
+                 border:none;
+                 height:38px;
+                 width:80px;
+                 border-radius:6px;
+                 cursor:pointer;
+                 margin-top:5px;
+              }
+              .notes .sure .btn1{
+                 float:left;
+              }
+               .notes .sure .btn2{
+                 float:right;
+              }
+          /*   备忘录输入渲染结束  */
+            /*蒙版*/
+           .masking{
+               width:100%;
+               height:100%;
+               display:none;
+               opacity:0.3;
+               background:black;
+               position:absolute;
+               left:0;
+               right:0;
+               z-index: 10;
+           }

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    
+       <link rel=stylesheet href="./css/style.css">
+       <script src="./js/index.js"></script>
+    </head>
+    <body> 
+       <div class="masking"></div>
+       <div class="wrap">
+           <div class="time clear">
+               <span></span>
+           </div>
+           <div class="tab">               
+               <span></span>
+               <a href="#" class="prev"><</a>
+               <a href="#" class="next">></a>
+           </div>   
+           <div id='calendar'>
+               <ul id="head" class="clear">
+                   <li class="colorRed">日</li>
+                   <li>一</li>
+                   <li>二</li>
+                   <li>三</li>
+                   <li>四</li>
+                   <li>五</li>
+                   <li class="colorRed">六</li>
+               </ul>
+               <ul id="list" class="clear">
+                  
+               </ul>
+           </div>       
+           <div class="show-list">
+               <div class="plus"><a href="javascript:;">+</a></div>
+               <ul class="notes-list">
+               </ul> 
+           </div>     
+       </div>
+       <ul class="sticky-notes">
+              <li><a href="#">
+                  <h2>东方明珠吃饭</h2>
+                  <span>2017-03-04</span>  <span>12:45</span>
+                  <p>javascript要熬出头啦</p>
+              </a></li>
+              <li><a href="#">
+                  <h2>汤姆大叔：</h2>
+                  <span>2017-03-04</span>  <span>14:30</span>
+                  <p>一切皆有可能，666</p>
+              </a></li>
+              
+              <li><a href="#">
+                  <h2>去哪儿：</h2>
+                  <span>2017-03-04</span>  <span>16:30</span>
+                  <p>努力总有回报，加油吧，少年</p>
+              </a></li>
+              <li><a href="#">
+                  <h2>某武林高手：</h2>
+                  <span>2017-03-04</span>  <span>17:00</span>
+                  <p>低于18000块的面试再也不去了，它grandma的</p>
+              </a></li>
+       </ul>
+        <!-- 备忘录输入界面开始 -->
+       <div class="notes">
+             <h2>备忘录</h2>
+             <div class="notes-title">
+                 <input type="text" name="" value="" placeholder="标题">
+             </div>    
+             <div class="detail">
+                  <textarea rows="3" cols="20" placeholder="做点啥" value=""></textarea>
+             </div>
+             <div class="notes-time">
+                <label>提醒时间:</label>
+                <input type="datetime-local" name="" placeholder="2017-03-04T12:34">    
+             </div>  
+             <div class="sure clear">
+                <button type="button" class="btn1">取消</button><button type="button" class="btn2">确定</button>
+             </div>                
+       </div>
+       <!-- 备忘录输入界面结束 -->
+    </body>    
+</html>
+
+
+
+<!--  <script type="text/javascript">
+   window.onload=function(){
+       var notes_title=document.querySelector(".notes-title input");
+       var notes_detial=document.querySelector(".detail textarea");
+       var notes_time=document.querySelector(".notes-time input");
+       var btn2=document.querySelector(".btn2");
+        btn2.onclick=function(){
+              console.log(notes_time.value);
+          }
+   }
+</script> 
+
+<div class="day-event">
+              <div class="remove">
+                 <a href="javascript:;"></a>
+              </div>       
+              <h2 class="title">今天愚人节</h2>
+              <span class="date">2017-04-01</span>
+              <span class="time">12:12</span>
+              <p>窗前明月光，疑是地上霜</p>
+              <button class="read-more">Read more!</button>
+          </div>   -->
+<!-- 
+
+             .day-event{
+               text-align: center;
+               width:362px;
+               background-color: #f2f2f2;
+               position:absolute;
+               left:370px;
+               top:150px;
+               display:none;
+           }
+           .day-event .remove{
+              height:12px;
+              position:relative; 
+           }
+
+           .day-event .remove a{
+               display:inline-block;
+               width:12px;
+               height:12px;
+               background: url(img-calendar/1.png)no-repeat;
+               position:absolute;
+               right:0;
+           }
+           .day-event .title{
+               font-size: 18px;
+               height:50px;
+               line-height: 50px;
+               font-family: "微软雅黑";
+           }
+           .day-event p{
+               height:80px;
+           }
+           .day-event .time{
+               font-size: 12px;
+           }
+           .day-event .read-more{
+               background-color: #373740;
+               border:none;
+               width:100%; 
+               height:40px;
+               line-height: 40px;
+               color:white;
+               cursor:pointer;
+               border-radius: 4px;
+           }
+           .day-event .read-more:hover{
+               background-color: #c0392b;
+             
+           } -->
